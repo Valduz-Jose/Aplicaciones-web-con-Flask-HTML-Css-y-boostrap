@@ -1,0 +1,18 @@
+/* Estilos CSS en archivo externo */
+body{
+    background-color: black;
+    color: white;
+}
+a{
+    color: hotpink;
+}
+a:hover{
+    color: yellow;
+}
+/* Clases o selectores */
+.texto-centrado{
+    text-align: center;
+}
+.titulo{
+    font-size: 250%;
+}
