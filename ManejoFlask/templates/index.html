@@ -34,46 +34,45 @@
         <div class="border rounded-3 p-2">
           <!-- Formulario -->
           <form action="/guardar" method="post" autocomplete="off">
+            {{forma.csrf_token}}
+            <!-- Token de seguridad para proteger contra ataques CSRF -->
             <!-- Nombre -->
             <div class="form-floating py-2">
-              <input
+              <!-- <input
                 type="text"
                 class="form-control"
                 id="nombre"
                 placeholder="Nombre"
               />
-              <label for="nombre">Nombre</label>
+              <label for="nombre">Nombre</label> -->
+              {{ forma.nombre(class='form-control', id='nombre',
+              placeholder='Nombre') }} {{forma.nombre.label(class='form-label',
+              for='nombre')}}
             </div>
             <!-- Apellido -->
             <div class="form-floating py-2">
-              <input
-                type="text"
-                class="form-control"
-                id="apellido"
-                placeholder="Apellido"
-              />
-              <label for="apellido">Apellido</label>
+              {{forma.apellido(class='form-control',id =
+              'apellido',placeholder='Apellido')}}
+              {{forma.apellido.label(class='form-label',for='apellido')}}
             </div>
             <!-- Membresia -->
             <div class="form-floating py-2">
-              <input
-                type="number"
-                class="form-control"
-                id="membresia"
-                placeholder="Membresia"
-              />
-              <label for="membresia">Membresia</label>
+              {{forma.membresia(class='form-control',id =
+              'membresia',placeholder='Membresia')}}
+              {{forma.membresia.label(class='form-label',for='membresia')}}
             </div>
             <!-- Botones -->
             <div class="text-center py-2">
-              <button type="submit" class="btn btn-warning btn-sm me-3">
+              <!-- <button type="submit" class="btn btn-warning btn-sm me-3">
                 Guardar
-              </button>
-              <input
+              </button> -->
+              {{forma.guardar(class='btn btn-warning btn-sm me-3')}}
+              <!-- <input
                 type="reset"
                 class="btn btn-danger btn-sm"
                 value="Limpiar"
-              />
+              /> -->
+              <a href="/limpiar" class="btn btn-danger btn-sm">Limpiar</a>
             </div>
           </form>
         </div>
