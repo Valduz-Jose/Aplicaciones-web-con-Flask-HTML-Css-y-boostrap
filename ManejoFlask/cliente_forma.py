@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField , SubmitField ,IntegerField
+from wtforms import StringField , SubmitField ,IntegerField, HiddenField
 from wtforms.validators import DataRequired
 
 class ClienteForma(FlaskForm):
+  id = HiddenField('Id') #Campo oculto para almacenar el id del cliente, este campo no se muestra en el formulario, pero se utiliza para almacenar el id del cliente que se va a editar.
   nombre = StringField('Nombre', validators=[DataRequired()])
   apellido = StringField('Apellido', validators=[DataRequired()])
   membresia = IntegerField('Membresia', validators=[DataRequired()])

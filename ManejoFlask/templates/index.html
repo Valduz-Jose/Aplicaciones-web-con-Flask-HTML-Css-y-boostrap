@@ -35,6 +35,8 @@
           <!-- Formulario -->
           <form action="/guardar" method="post" autocomplete="off">
             {{forma.csrf_token}}
+            <!-- Valor de Id -->
+            {{forma.id}}
             <!-- Token de seguridad para proteger contra ataques CSRF -->
             <!-- Nombre -->
             <div class="form-floating py-2">
@@ -98,7 +100,7 @@
                 <td class="text-center">
                   <div>
                     <a
-                      href="/editat/{{cliente.id}}"
+                      href="/editar/{{cliente.id}}"
                       class="btn btn-warning btn-sm me-3"
                     >
                       <i class="bi bi-pencil"></i>
